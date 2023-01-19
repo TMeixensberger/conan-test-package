@@ -19,7 +19,8 @@ class WorldConan(ConanFile):
             del self.options.fPIC
 
     def source(self):
-        self.run("cp /home/vboxuser/conan-test/world/hello-world . -r")
+        self.run("git clone https://github.com/TMeixensberger/conan-test-package.git")
+        self.run("cp conan-test-package/hello-world . -r")
          
     def build(self):
         cmake = CMake(self)
